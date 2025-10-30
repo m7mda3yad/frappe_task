@@ -49,3 +49,4 @@
 2025-10-30 15:53:43,659 INFO /usr/local/bin/bench --site task.local serve --port 8080
 2025-10-30 15:55:05,387 INFO /usr/local/bin/bench migrate
 2025-10-30 15:56:14,755 INFO /usr/local/bin/bench migrate
+2025-10-30 16:15:03,198 INFO /usr/local/bin/bench --site task.local export-fixtures
