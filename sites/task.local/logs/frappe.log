@@ -1,0 +1,84 @@
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,813 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,814 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,814 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,814 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,814 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,814 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:22,814 ERROR frappe New Exception collected in error log
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,495 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,495 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,495 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,496 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,497 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,497 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,497 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}
+2025-10-30 11:34:28,497 ERROR frappe New Exception collected in error log
+Site: task.local
+Form Dict: {'key': '********', 'old_password': '********', 'new_password': '********', 'confirm_password': '********', 'logout_all_sessions': '1', 'cmd': 'frappe.core.doctype.user.user.update_password'}

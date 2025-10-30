@@ -1,0 +1,51 @@
+2025-10-30 11:06:07,819 DEBUG cd task && python3 -m venv env
+2025-10-30 11:06:10,800 DEBUG cd task && /home/mohamed/Desktop/projects/old/task/env/bin/python -m pip install --quiet --upgrade pip
+2025-10-30 11:06:18,706 DEBUG cd task && /home/mohamed/Desktop/projects/old/task/env/bin/python -m pip install --quiet wheel
+2025-10-30 11:06:24,945 LOG Getting frappe
+2025-10-30 11:06:24,945 DEBUG cd task/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-10-30 11:06:30,213 LOG Installing frappe
+2025-10-30 11:06:30,214 DEBUG cd /home/mohamed/Desktop/projects/old/task && /home/mohamed/Desktop/projects/old/task/env/bin/python -m pip install --quiet --upgrade -e /home/mohamed/Desktop/projects/old/task/apps/frappe 
+2025-10-30 11:07:14,070 DEBUG cd /home/mohamed/Desktop/projects/old/task/apps/frappe && yarn install --check-files
+2025-10-30 11:07:19,729 DEBUG cd task && bench build
+2025-10-30 11:07:19,849 INFO /usr/local/bin/bench build
+2025-10-30 11:07:37,267 LOG setting up backups
+2025-10-30 11:07:37,278 LOG backups were set up
+2025-10-30 11:07:37,278 INFO Bench task initialized
+2025-10-30 11:07:37,622 INFO A newer version of bench is available: 5.24.1 → 5.26.0
+2025-10-30 11:24:41,853 INFO /usr/local/bin/bench new-site task.local
+2025-10-30 11:30:13,657 INFO /usr/local/bin/bench start
+2025-10-30 11:30:13,918 INFO /usr/local/bin/bench watch
+2025-10-30 11:30:13,925 INFO /usr/local/bin/bench worker
+2025-10-30 11:30:13,963 INFO /usr/local/bin/bench schedule
+2025-10-30 11:30:13,975 INFO /usr/local/bin/bench serve --port 8000
+2025-10-30 11:32:03,382 INFO /usr/local/bin/bench --site task.local serve
+2025-10-30 11:36:20,243 INFO /usr/local/bin/bench --site task.local serve
+2025-10-30 11:47:53,934 INFO /usr/local/bin/bench restart
+2025-10-30 11:47:54,294 INFO A newer version of bench is available: 5.24.1 → 5.26.0
+2025-10-30 11:48:01,475 INFO /usr/local/bin/bench --site task.local serve
+2025-10-30 11:48:22,895 INFO /usr/local/bin/bench start
+2025-10-30 11:48:23,131 INFO /usr/local/bin/bench serve --port 8000
+2025-10-30 11:48:23,146 INFO /usr/local/bin/bench schedule
+2025-10-30 11:48:23,151 INFO /usr/local/bin/bench watch
+2025-10-30 11:48:23,199 INFO /usr/local/bin/bench worker
+2025-10-30 11:49:32,083 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-10-30 11:50:56,203 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-10-30 11:56:17,672 INFO /usr/local/bin/bench new-app task_app
+2025-10-30 11:56:17,677 LOG creating new app task_app
+2025-10-30 11:57:31,107 INFO /usr/local/bin/bench new-app library
+2025-10-30 11:57:31,112 LOG creating new app library
+2025-10-30 12:00:01,363 INFO /usr/local/bin/bench --verbose --site all backup
+2025-10-30 12:13:51,568 LOG Installing library
+2025-10-30 12:13:51,577 DEBUG cd /home/mohamed/Desktop/projects/old/task && /home/mohamed/Desktop/projects/old/task/env/bin/python -m pip install --quiet --upgrade -e /home/mohamed/Desktop/projects/old/task/apps/library 
+2025-10-30 12:13:54,454 DEBUG bench build --app library
+2025-10-30 12:13:54,666 INFO /usr/local/bin/bench build --app library
+2025-10-30 12:13:57,827 INFO A newer version of bench is available: 5.24.1 → 5.26.0
+2025-10-30 12:15:06,601 INFO /usr/local/bin/bench --site task.local install-app library
+2025-10-30 12:17:47,877 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-10-30 15:53:06,596 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-10-30 15:53:27,034 INFO /usr/local/bin/bench use task.local
+2025-10-30 15:53:31,229 INFO /usr/local/bin/bench start
+2025-10-30 15:53:34,513 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-10-30 15:53:43,659 INFO /usr/local/bin/bench --site task.local serve --port 8080
+2025-10-30 15:55:05,387 INFO /usr/local/bin/bench migrate
+2025-10-30 15:56:14,755 INFO /usr/local/bin/bench migrate
