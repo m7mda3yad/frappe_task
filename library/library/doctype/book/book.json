@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-30 14:25:15.609623",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "book__form_section",
+  "book_title",
+  "isbn",
+  "authors",
+  "publisher",
+  "category__genre",
+  "year_of_publication",
+  "number_of_copies",
+  "available_copies",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "book__form_section",
+   "fieldtype": "Section Break",
+   "label": "Book  Form"
+  },
+  {
+   "bold": 1,
+   "fieldname": "book_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Book Title",
+   "options": "\u0627\u0633\u0645 \u0627\u0644\u0643\u062a\u0627\u0628",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "ISBN Data"
+  },
+  {
+   "fieldname": "authors",
+   "fieldtype": "Table",
+   "label": "Authors",
+   "options": "Book Author"
+  },
+  {
+   "fieldname": "publisher",
+   "fieldtype": "Link",
+   "label": "Publisher",
+   "options": "Publisher"
+  },
+  {
+   "fieldname": "category__genre",
+   "fieldtype": "Link",
+   "label": "Category / Genre",
+   "options": "Category"
+  },
+  {
+   "fieldname": "year_of_publication",
+   "fieldtype": "Int",
+   "label": "Year of Publication"
+  },
+  {
+   "fieldname": "number_of_copies",
+   "fieldtype": "Int",
+   "label": "Number of Copies"
+  },
+  {
+   "fieldname": "available_copies",
+   "fieldtype": "Int",
+   "label": "Available Copies"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-30 15:54:26.368919",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Book",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

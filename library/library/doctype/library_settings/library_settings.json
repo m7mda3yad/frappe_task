@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-30 20:09:36.401864",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "library_settings_section",
+  "max_books_per_member",
+  "borrow_duration_days",
+  "fine_per_day"
+ ],
+ "fields": [
+  {
+   "fieldname": "library_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Library Settings"
+  },
+  {
+   "fieldname": "max_books_per_member",
+   "fieldtype": "Int",
+   "label": "max_books_per_member"
+  },
+  {
+   "fieldname": "borrow_duration_days",
+   "fieldtype": "Int",
+   "label": "borrow_duration_days"
+  },
+  {
+   "fieldname": "fine_per_day",
+   "fieldtype": "Int",
+   "label": "fine_per_day"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-10-30 20:10:21.432021",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Library Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
