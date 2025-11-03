@@ -1,7 +1,20 @@
 [
-    "tabInstalled",
-    "tabNavbar",
+    "tabDocType",
+    "tabTag",
     "tabSingles",
+    "tabNavbar",
+    "tabError",
+    "tabError Log",
+    "tabInstalled",
+    "tabDocType Link",
+    "tabPublisher",
     "tabNavbar Item",
-    "tabInstalled Application"
+    "tabDocType Action",
+    "tabTag Link",
+    "tabDocPerm",
+    "tabDocType State",
+    "tabDocField",
+    "tabRoute",
+    "tabInstalled Application",
+    "tabRoute History"
 ]

@@ -2639,3 +2639,57 @@ ALTER TABLE `tabBook Author` ADD COLUMN `author` varchar(140), ADD COLUMN `role`
 ALTER TABLE `tabBook` ADD COLUMN `book_title` varchar(140) UNIQUE, ADD COLUMN `isbn` varchar(140), ADD COLUMN `publisher` varchar(140), ADD COLUMN `category__genre` varchar(140), ADD COLUMN `year_of_publication` int(11) NOT NULL DEFAULT 0, ADD COLUMN `number_of_copies` int(11) NOT NULL DEFAULT 0, ADD COLUMN `available_copies` int(11) NOT NULL DEFAULT 0, ADD COLUMN `description` text
 2025-10-30 14:50:13,419 WARNING database DDL Query made to DB:
 ALTER TABLE `tabBook` ADD UNIQUE INDEX IF NOT EXISTS book_title (`book_title`)
+2025-10-30 18:21:57,011 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPublisher` ADD UNIQUE INDEX IF NOT EXISTS name1 (`name1`)
+2025-10-30 18:29:59,486 WARNING database DDL Query made to DB:
+create table `tabLibrary Member` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-10-30 18:35:17,004 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Member` ADD COLUMN `full_name` varchar(140), ADD COLUMN `email` varchar(140), ADD COLUMN `membership_date` date, ADD COLUMN `expiry_date` date, ADD COLUMN `phone` varchar(140), ADD COLUMN `address` text, ADD COLUMN `active` tinyint(4) NOT NULL DEFAULT 0
+2025-10-30 18:35:44,305 WARNING database DDL Query made to DB:
+create table `tabLibrary Transaction` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-10-30 18:36:43,716 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` ADD COLUMN `member` varchar(140)
+2025-10-30 18:39:00,273 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` ADD COLUMN `book` varchar(140), ADD COLUMN `issue_date` date, ADD COLUMN `due_date` date, ADD COLUMN `return_date` date, ADD COLUMN `status` varchar(140)
+2025-10-30 20:08:58,901 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` ADD COLUMN `amended_from` varchar(140)
+2025-10-30 20:08:58,931 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` ADD INDEX `amended_from_index`(`amended_from`)
+2025-10-30 20:19:17,679 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPublisher` DROP INDEX `name1`
+2025-11-02 13:47:36,951 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Member` ADD UNIQUE INDEX IF NOT EXISTS full_name (`full_name`)
+2025-11-02 13:52:16,487 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` ADD COLUMN `is_returned` tinyint(4) NOT NULL DEFAULT 0

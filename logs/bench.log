@@ -50,3 +50,32 @@
 2025-10-30 15:55:05,387 INFO /usr/local/bin/bench migrate
 2025-10-30 15:56:14,755 INFO /usr/local/bin/bench migrate
 2025-10-30 16:15:03,198 INFO /usr/local/bin/bench --site task.local export-fixtures
+2025-10-30 16:18:10,163 INFO /usr/local/bin/bench --site task.local export-fixtures --app library
+2025-10-30 16:19:15,230 INFO /usr/local/bin/bench --site task.local export-fixtures --app library
+2025-10-30 16:19:36,922 INFO /usr/local/bin/bench export-doc library
+2025-10-30 16:20:21,370 INFO /usr/local/bin/bench --site task.local export-doc DocType Book
+2025-10-30 16:21:23,578 INFO /usr/local/bin/bench --site task.local export-doc DocType Author
+2025-10-30 16:21:24,580 INFO /usr/local/bin/bench --site task.local export-doc DocType Publisher
+2025-10-30 16:21:25,713 INFO /usr/local/bin/bench --site task.local export-doc DocType Category
+2025-10-30 16:21:27,024 INFO /usr/local/bin/bench --site task.local export-doc DocType Book Author
+2025-10-30 18:00:01,563 INFO /usr/local/bin/bench --verbose --site all backup
+2025-10-30 18:19:48,044 INFO /usr/local/bin/bench --site task.local serve --port 8080
+2025-10-30 18:19:56,847 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-10-30 18:20:02,190 INFO /usr/local/bin/bench --site task.local serve --port 8001
+2025-10-30 20:08:16,191 INFO /usr/local/bin/bench --site task.local serve --port 8001
+2025-10-30 20:13:55,520 INFO /usr/local/bin/bench --site task.local export-doc
+2025-10-30 20:14:13,750 INFO /usr/local/bin/bench --site task.local export-doc DocType Library Settings
+2025-10-30 20:14:44,340 INFO /usr/local/bin/bench --site task.local serve --port 8001
+2025-10-30 20:19:15,098 INFO /usr/local/bin/bench migrate
+2025-10-30 20:19:28,894 INFO /usr/local/bin/bench build
+2025-10-31 18:00:02,078 INFO /usr/local/bin/bench --verbose --site all backup
+2025-11-02 12:00:01,893 INFO /usr/local/bin/bench --verbose --site all backup
+2025-11-02 13:27:31,687 INFO /usr/local/bin/bench start
+2025-11-02 13:27:31,951 INFO /usr/local/bin/bench worker
+2025-11-02 13:27:31,966 INFO /usr/local/bin/bench serve --port 8000
+2025-11-02 13:27:31,996 INFO /usr/local/bin/bench watch
+2025-11-02 13:27:32,006 INFO /usr/local/bin/bench schedule
+2025-11-02 13:27:52,716 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-11-02 13:27:58,346 INFO /usr/local/bin/bench --site task.local serve --port 8080
+2025-11-02 13:28:14,091 INFO /usr/local/bin/bench --site task.local serve --port 8000
+2025-11-03 09:42:49,636 INFO /usr/local/bin/bench --site task.local serve --port 8000

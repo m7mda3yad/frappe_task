@@ -14,3 +14,11 @@
 2025-10-30 11:48:23,636 Cleaning registries for queue: home-mohamed-Desktop-projects-old-task:long
 2025-10-30 11:49:31,285 Worker 22ceee60be474f14ab27f10534b336a3 [PID 107569]: warm shut down requested
 2025-10-30 11:49:31,288 Unsubscribing from channel rq:pubsub:22ceee60be474f14ab27f10534b336a3
+2025-11-02 13:27:32,455 Worker rq:worker:1dd49097a08c4dc9b66c8683137425ff started with PID 119982, version 2.4.0
+2025-11-02 13:27:32,455 Subscribing to channel rq:pubsub:1dd49097a08c4dc9b66c8683137425ff
+2025-11-02 13:27:32,456 *** Listening on home-mohamed-Desktop-projects-old-task:short, home-mohamed-Desktop-projects-old-task:default, home-mohamed-Desktop-projects-old-task:long...
+2025-11-02 13:27:32,456 Cleaning registries for queue: home-mohamed-Desktop-projects-old-task:short
+2025-11-02 13:27:32,458 Cleaning registries for queue: home-mohamed-Desktop-projects-old-task:default
+2025-11-02 13:27:32,459 Cleaning registries for queue: home-mohamed-Desktop-projects-old-task:long
+2025-11-02 13:27:33,292 Worker 1dd49097a08c4dc9b66c8683137425ff [PID 119982]: warm shut down requested
+2025-11-02 13:27:33,294 Unsubscribing from channel rq:pubsub:1dd49097a08c4dc9b66c8683137425ff
