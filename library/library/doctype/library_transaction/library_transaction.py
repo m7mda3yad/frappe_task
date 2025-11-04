@@ -1,8 +1,27 @@
+from annotated_types import doc
 import frappe
 from frappe.model.document import Document
 from frappe.utils import add_days, nowdate
+from frappe.utils import nowdate
 
 class LibraryTransaction(Document):
+
+    @frappe.whitelist()
+    def return_book(self):
+        if self.is_returned:
+            frappe.throw("Book already returned.")
+        book = frappe.get_doc("Book", self.book)
+        book.available_copies += 1
+        book.save()
+        self.status = "Returned"
+        self.is_returned = 1
+        self.return_date = nowdate()
+        self.save()
+
+        frappe.msgprint(f"Book '{self.book}' returned successfully.")
+
+
+
 
     def before_submit(self):
         # 1️⃣ Check if the book has available copies
@@ -46,11 +65,6 @@ class LibraryTransaction(Document):
         self.status = "Returned"
         self.is_returned = 1
         frappe.msgprint(f"Book '{self.book}' returned successfully by member '{self.member}'.")
-
-
-
-
-
 
 
 
