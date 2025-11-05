@@ -3,18 +3,17 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import add_days, nowdate
 from frappe.utils import nowdate
-
+from frappe.utils import add_days, add_months, nowdate
 class LibraryTransaction(Document):
 
     @frappe.whitelist()
     def return_book(self):
-        if self.is_returned:
+        if self.status == "Returned":
             frappe.throw("Book already returned.")
         book = frappe.get_doc("Book", self.book)
         book.available_copies += 1
         book.save()
         self.status = "Returned"
-        self.is_returned = 1
         self.return_date = nowdate()
         self.save()
 
@@ -34,7 +33,7 @@ class LibraryTransaction(Document):
         current_borrowed = frappe.db.count("Library Transaction", {
             "member": self.member,
             "docstatus": 1,  # Submitted
-            "is_returned": 0
+            "status": "Issued"
         })
 
         if current_borrowed >= max_limit:
@@ -44,11 +43,21 @@ class LibraryTransaction(Document):
         book.available_copies -= 1
         book.save()
 
-        # 4️⃣ Update the transaction status and is_returned flag
         self.status = "Issued"
-        self.is_returned = 0
 
-        # 5️⃣ Automatically set the due_date (7 days from issue_date if not set)
+
+        # 4️⃣ calc  borrow_duration
+        issue_date = self.issue_date or nowdate()
+        duration = self.borrow_duration.strip().lower()
+        if "week" in duration:
+            weeks = int(duration.split()[0])
+            self.due_date = add_days(issue_date, weeks * 7)
+        elif "month" in duration:
+            months = int(duration.split()[0])
+            self.due_date = add_months(issue_date, months)
+        else:
+            self.due_date = add_days(issue_date, 7)
+
         if not self.due_date:
             self.due_date = add_days(self.issue_date or nowdate(), 7)
 
@@ -61,9 +70,10 @@ class LibraryTransaction(Document):
         book = frappe.get_doc("Book", self.book)
         book.available_copies += 1
         book.save()
-
+        self.return_date = nowdate()
         self.status = "Returned"
-        self.is_returned = 1
+        self.save()
+
         frappe.msgprint(f"Book '{self.book}' returned successfully by member '{self.member}'.")
 
 
@@ -86,7 +96,7 @@ class LibraryTransaction(Document):
 
 # Book Author (Child Table linking Book & Author)
 
-# Library Transaction (Submittable, fields: member, book, issue_date, return_date, status, is_returned, remarks)
+# Library Transaction (Submittable, fields: member, book, issue_date, return_date, status, remarks)
 
 # لحد دلوقتي أضفت backend logic لتحديث available_copies عند الاستعارة (submit) والإرجاع (cancel)، وكمان تحققنا من الحد الأقصى للاستعارة للعضو.
 

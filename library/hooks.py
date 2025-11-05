@@ -4,6 +4,7 @@ app_publisher = "Mohamed"
 app_description = "library desc"
 app_email = "m7mda3yad@gmail.com"
 app_license = "mit"
+fixtures = [ { "doctype": "DocType", "filters": [["custom", "=", 1]] } ]
 
 # Apps
 # ------------------

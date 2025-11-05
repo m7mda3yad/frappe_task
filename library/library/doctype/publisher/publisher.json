@@ -1,8 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-10-30 14:42:53.244503",
- "custom": 1,
+ "creation": "2025-11-05 10:38:56.969062",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -45,7 +44,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-30 14:44:49.559681",
+ "modified": "2025-11-05 10:59:24.620209",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Publisher",

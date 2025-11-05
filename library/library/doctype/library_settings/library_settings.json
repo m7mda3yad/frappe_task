@@ -1,8 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-10-30 20:09:36.401864",
- "custom": 1,
+ "creation": "2025-11-05 10:38:57.504314",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -20,24 +19,24 @@
   {
    "fieldname": "max_books_per_member",
    "fieldtype": "Int",
-   "label": "max_books_per_member"
+   "label": "Maximum Books per Member"
   },
   {
    "fieldname": "borrow_duration_days",
    "fieldtype": "Int",
-   "label": "borrow_duration_days"
+   "label": "Borrow Duration (Days)"
   },
   {
    "fieldname": "fine_per_day",
    "fieldtype": "Int",
-   "label": "fine_per_day"
+   "label": "Fine per Day (Currency)"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-10-30 20:10:21.432021",
+ "modified": "2025-11-05 10:57:58.089371",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Library Settings",
