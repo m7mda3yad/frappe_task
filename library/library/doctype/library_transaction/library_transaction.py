@@ -1,26 +1,9 @@
-from annotated_types import doc
 import frappe
 from frappe.model.document import Document
-from frappe.utils import add_days, nowdate
-from frappe.utils import nowdate
 from frappe.utils import add_days, add_months, nowdate
+from frappe.utils import nowdate
+
 class LibraryTransaction(Document):
-
-    @frappe.whitelist()
-    def return_book(self):
-        if self.status == "Returned":
-            frappe.throw("Book already returned.")
-        book = frappe.get_doc("Book", self.book)
-        book.available_copies += 1
-        book.save()
-        self.status = "Returned"
-        self.return_date = nowdate()
-        self.save()
-
-        frappe.msgprint(f"Book '{self.book}' returned successfully.")
-
-
-
 
     def before_submit(self):
         # 1️⃣ Check if the book has available copies
@@ -32,21 +15,20 @@ class LibraryTransaction(Document):
         max_limit = 3
         current_borrowed = frappe.db.count("Library Transaction", {
             "member": self.member,
-            "docstatus": 1,  # Submitted
+            "docstatus": 1,
             "status": "Issued"
         })
 
         if current_borrowed >= max_limit:
             frappe.throw(f"Member has reached the maximum allowed borrowed books ({max_limit}).")
 
-        # 3️⃣ Reduce the available copies of the book
+        # 3️⃣ Reduce the available copies
         book.available_copies -= 1
         book.save()
 
         self.status = "Issued"
 
-
-        # 4️⃣ calc  borrow_duration
+        # 4️⃣ Calculate due date
         issue_date = self.issue_date or nowdate()
         duration = self.borrow_duration.strip().lower()
         if "week" in duration:
@@ -58,29 +40,48 @@ class LibraryTransaction(Document):
         else:
             self.due_date = add_days(issue_date, 7)
 
-        if not self.due_date:
-            self.due_date = add_days(self.issue_date or nowdate(), 7)
-
     def on_submit(self):
-        # Message when book is issued
         frappe.msgprint(f"Book '{self.book}' issued to member '{self.member}'. Due date: {self.due_date}")
 
-    def on_cancel(self):
-        # When the transaction is canceled or book is returned
-        book = frappe.get_doc("Book", self.book)
-        book.available_copies += 1
-        book.save()
-        self.return_date = nowdate()
-        self.status = "Returned"
-        self.save()
 
-        frappe.msgprint(f"Book '{self.book}' returned successfully by member '{self.member}'.")
+# ✅ move this function OUTSIDE the class
+@frappe.whitelist()
+def return_book(docname):
+    doc = frappe.get_doc("Library Transaction", docname)
+    if doc.status == "Returned":
+        frappe.throw("Book already returned.")
+
+    book = frappe.get_doc("Book", doc.book)
+    book.available_copies += 1
+    book.save()
+
+    doc.status = "Returned"
+    doc.return_date = nowdate()
+    doc.save()
+
+    frappe.msgprint(f"Book '{doc.book}' returned successfully.")
 
 
 
+def update_overdue_transactions():
+    today = nowdate()
 
+    # نجيب كل المعاملات اللي متأخرة ولسه Issued
+    overdue_transactions = frappe.get_all(
+        "Library Transaction",
+        filters={
+            "status": "Issued",
+            "due_date": ("<", today)
+        },
+        fields=["name"]
+    )
 
+    for tx in overdue_transactions:
+        # نغيّر status مباشرة بدون validations
+        frappe.db.set_value("Library Transaction", tx.name, "status", "Overdue")
 
+    frappe.db.commit()
+    frappe.logger().info(f"Updated {len(overdue_transactions)} overdue transactions.")
 
 
 # أنا بصنع Library Management App باستخدام Frappe Framework.

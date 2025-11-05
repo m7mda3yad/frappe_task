@@ -1,10 +1,18 @@
 frappe.ui.form.on('Library Transaction', {
-    onload: function(frm) {
-        // إخفاء return_date عند الإنشاء، إظهار عند عرض السجل
-        if (frm.is_new()) {
-            frm.set_df_property('return_date', 'hidden', 1);
-        } else {
-            frm.set_df_property('return_date', 'hidden', 0);
+    refresh: function(frm) {
+        if (frm.doc.status === "Issued" && !frm.is_new()) {
+            frm.add_custom_button(__('Return Book'), function() {
+                frappe.call({
+                    method: "library.library.doctype.library_transaction.library_transaction.return_book",
+                    args: { docname: frm.doc.name },
+                    callback: function(r) {
+                        if (!r.exc) {
+                            frappe.msgprint(__('Book returned successfully!'));
+                            frm.reload_doc();
+                        }
+                    }
+                });
+            }, __("Actions"));
         }
     },
 
@@ -18,14 +26,14 @@ frappe.ui.form.on('Library Transaction', {
 });
 
 function calculate_due_date(frm) {
-    if(frm.doc.issue_date && frm.doc.borrow_duration) {
+    if (frm.doc.issue_date && frm.doc.borrow_duration) {
         let duration = frm.doc.borrow_duration.trim().toLowerCase();
         let due_date;
 
-        if(duration.includes("week")) {
+        if (duration.includes("week")) {
             let weeks = parseInt(duration.split(" ")[0]);
             due_date = frappe.datetime.add_days(frm.doc.issue_date, weeks * 7);
-        } else if(duration.includes("month")) {
+        } else if (duration.includes("month")) {
             let months = parseInt(duration.split(" ")[0]);
             due_date = frappe.datetime.add_months(frm.doc.issue_date, months);
         } else {
