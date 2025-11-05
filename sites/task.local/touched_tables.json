@@ -1,15 +1,17 @@
 [
-    "tabSingles",
     "tabDocType State",
+    "tabSingles",
     "tabTag Link",
-    "tabDocType Action",
+    "tabError",
+    "tabInstalled",
     "tabNavbar",
     "tabDocField",
-    "tabDocPerm",
-    "tabInstalled",
     "tabDocType",
     "tabInstalled Application",
     "tabTag",
+    "tabError Log",
     "tabNavbar Item",
-    "tabDocType Link"
+    "tabDocType Link",
+    "tabDocPerm",
+    "tabDocType Action"
 ]
