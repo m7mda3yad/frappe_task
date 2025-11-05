@@ -2693,3 +2693,53 @@ ALTER TABLE `tabPublisher` DROP INDEX `name1`
 ALTER TABLE `tabLibrary Member` ADD UNIQUE INDEX IF NOT EXISTS full_name (`full_name`)
 2025-11-02 13:52:16,487 WARNING database DDL Query made to DB:
 ALTER TABLE `tabLibrary Transaction` ADD COLUMN `is_returned` tinyint(4) NOT NULL DEFAULT 0
+2025-11-05 09:55:36,792 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parent varchar(140)
+2025-11-05 09:55:36,795 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parenttype varchar(140)
+2025-11-05 09:55:36,797 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parentfield varchar(140)
+2025-11-05 10:10:37,360 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parent varchar(140)
+2025-11-05 10:10:37,362 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parenttype varchar(140)
+2025-11-05 10:10:37,363 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parentfield varchar(140)
+2025-11-05 10:11:35,103 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parent varchar(140)
+2025-11-05 10:11:35,105 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parenttype varchar(140)
+2025-11-05 10:11:35,108 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parentfield varchar(140)
+2025-11-05 10:12:07,007 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parent varchar(140)
+2025-11-05 10:12:07,010 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parenttype varchar(140)
+2025-11-05 10:12:07,011 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parentfield varchar(140)
+2025-11-05 10:13:19,234 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAuthor` ADD UNIQUE INDEX IF NOT EXISTS name1 (`name1`)
+2025-11-05 10:20:51,205 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBook` ADD COLUMN `title` varchar(140)
+2025-11-05 10:20:52,682 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAuthor` DROP INDEX `name1`
+2025-11-05 10:23:33,495 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAuthor` ADD UNIQUE INDEX IF NOT EXISTS name1 (`name1`)
+2025-11-05 10:23:35,120 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAuthor` DROP INDEX `name1`
+2025-11-05 10:38:55,736 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAuthor` ADD UNIQUE INDEX IF NOT EXISTS name1 (`name1`)
+2025-11-05 10:38:57,163 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAuthor` DROP INDEX `name1`
+2025-11-05 10:58:52,411 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parent varchar(140)
+2025-11-05 10:58:52,414 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parenttype varchar(140)
+2025-11-05 10:58:52,416 WARNING database DDL Query made to DB:
+alter table `tabBook Author` add column if not exists parentfield varchar(140)
+2025-11-05 13:14:58,967 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` ADD COLUMN `borrow_duration` varchar(140)
+2025-11-05 13:27:32,657 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` MODIFY `return_date` datetime(6), MODIFY `issue_date` datetime(6), MODIFY `due_date` datetime(6)
+2025-11-05 13:27:32,685 WARNING database DDL Query made to DB:
+ALTER TABLE `tabLibrary Transaction` DROP INDEX `amended_from_index`
