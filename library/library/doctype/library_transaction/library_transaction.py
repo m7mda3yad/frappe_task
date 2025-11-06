@@ -1,36 +1,42 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import add_days, add_months, nowdate
-from frappe.utils import nowdate
 
 class LibraryTransaction(Document):
+    def before_insert(self):
+        """Automatically issue the book when record is created (default status = Issued)"""
+        if self.status != "Issued":
+            return
 
-    def before_submit(self):
         # 1️⃣ Check if the book has available copies
         book = frappe.get_doc("Book", self.book)
         if book.available_copies < 1:
             frappe.throw("No copies available for this book.")
 
-        # 2️⃣ Check the maximum allowed borrowed books for the member
+        # 2️⃣ Check member limit
         max_limit = 3
-        current_borrowed = frappe.db.count("Library Transaction", {
-            "member": self.member,
-            "docstatus": 1,
-            "status": "Issued"
-        })
+        current_borrowed = frappe.db.count(
+            "Library Transaction",
+            {
+                "member": self.member,
+                "status": "Issued"
+            }
+        )
 
         if current_borrowed >= max_limit:
             frappe.throw(f"Member has reached the maximum allowed borrowed books ({max_limit}).")
+    def after_insert(self):
+        """Update book availability and set due date after issuing the book"""
 
-        # 3️⃣ Reduce the available copies
+        book = frappe.get_doc("Book", self.book)
+        # 3️⃣ Reduce available copies
         book.available_copies -= 1
-        book.save()
-
-        self.status = "Issued"
+        book.save(ignore_permissions=True)
 
         # 4️⃣ Calculate due date
         issue_date = self.issue_date or nowdate()
-        duration = self.borrow_duration.strip().lower()
+        duration = (self.borrow_duration or "").strip().lower()
+
         if "week" in duration:
             weeks = int(duration.split()[0])
             self.due_date = add_days(issue_date, weeks * 7)
@@ -40,49 +46,44 @@ class LibraryTransaction(Document):
         else:
             self.due_date = add_days(issue_date, 7)
 
-    def on_submit(self):
+        # 5️⃣ Save updated info
+        self.issue_date = issue_date
+        self.save(ignore_permissions=True)
+
         frappe.msgprint(f"Book '{self.book}' issued to member '{self.member}'. Due date: {self.due_date}")
 
 
-# ✅ move this function OUTSIDE the class
 @frappe.whitelist()
 def return_book(docname):
+    """Return book manually"""
     doc = frappe.get_doc("Library Transaction", docname)
     if doc.status == "Returned":
         frappe.throw("Book already returned.")
 
     book = frappe.get_doc("Book", doc.book)
     book.available_copies += 1
-    book.save()
+    book.save(ignore_permissions=True)
 
     doc.status = "Returned"
     doc.return_date = nowdate()
-    doc.save()
+    doc.save(ignore_permissions=True)
 
     frappe.msgprint(f"Book '{doc.book}' returned successfully.")
 
 
-
 def update_overdue_transactions():
     today = nowdate()
-
-    # نجيب كل المعاملات اللي متأخرة ولسه Issued
     overdue_transactions = frappe.get_all(
         "Library Transaction",
-        filters={
-            "status": "Issued",
-            "due_date": ("<", today)
-        },
-        fields=["name"]
+        filters={"status": "Issued", "due_date": ("<", today)},
+        fields=["name"],
     )
 
     for tx in overdue_transactions:
-        # نغيّر status مباشرة بدون validations
         frappe.db.set_value("Library Transaction", tx.name, "status", "Overdue")
 
     frappe.db.commit()
     frappe.logger().info(f"Updated {len(overdue_transactions)} overdue transactions.")
-
 
 # أنا بصنع Library Management App باستخدام Frappe Framework.
 # لحد دلوقتي عملت الـ Doctypes التالية:
